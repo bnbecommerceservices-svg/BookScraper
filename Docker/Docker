@@ -1,0 +1,13 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY ../BookScraper-Automation /app/BookScraper-Automation
+COPY ../BookScraper-Automation-Betterworld /app/BookScraper-Automation-Betterworld
+COPY ../BookScraper-Automation-eBay /app/BookScraper-Automation-eBay
+
+RUN pip install --no-cache-dir -r BookScraper-Automation/requirements.txt || true
+RUN pip install --no-cache-dir -r BookScraper-Automation-Betterworld/requirements.txt || true
+RUN pip install --no-cache-dir -r BookScraper-Automation-eBay/requirements.txt || true
+
+CMD ["python3", "BookScraper-Automation/main.py"]
