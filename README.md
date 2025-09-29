@@ -24,9 +24,24 @@ This project contains three book scrapers bundled into a single API:
 ## Deployment
 See DEPLOYMENT_INSTRUCTIONS.md for detailed deployment steps.
 
-## Testing with Postman
-1. Start the application with `docker-compose up`
-2. Send a GET request to any of the scraper endpoints to start scraping:
-   - http://localhost:8000/run-worldofbooks
-   - http://localhost:8000/run-betterworld
-   - http://localhost:8000/run-ebay
+## Running with Docker (Recommended for Deployment)
+
+1. Build and start the containers:
+```bash
+docker-compose up -d
+```
+
+2. Test the API endpoints:
+- http://localhost:8000/ - Health check
+- http://localhost:8000/run-worldofbooks - Run World of Books scraper
+- http://localhost:8000/run-betterworld - Run Better World Books scraper
+- http://localhost:8000/run-ebay - Run eBay scraper
+
+## Running Without Docker (For Development/Testing)
+
+See RUNNING_WITHOUT_DOCKER.md for detailed instructions on running the application without Docker.
+
+This approach is better for:
+- Development and debugging
+- Running on systems where Docker is not available
+- Direct file access and modification
