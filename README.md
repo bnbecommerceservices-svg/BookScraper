@@ -45,3 +45,33 @@ This approach is better for:
 - Development and debugging
 - Running on systems where Docker is not available
 - Direct file access and modification
+
+## Automated Local Execution (Without Docker)
+
+For completely automated execution on your local PC:
+
+1. Execute setup.bat to install all dependencies:
+```cmd
+setup.bat
+```
+
+2. Prepare your EAN files:
+- Copy your eans.txt file to each scraper directory:
+  - BookScraper-Automation/eans.txt
+  - BookScraper-Automation-Betterworld/eans.txt
+  - BookScraper-Automation-eBay/eans.txt
+
+3. Execute automated_run.bat to run all scrapers:
+```cmd
+automated_run.bat
+```
+
+This script will:
+- Run all three scrapers automatically
+- Handle errors and continue execution
+- Consolidate all CSV output files into a single 'output' directory
+- Log execution details to execution_log.txt
+
+Alternative options:
+- Run individual scrapers: run_scrapers.bat
+- Run the API server: run_api.bat
