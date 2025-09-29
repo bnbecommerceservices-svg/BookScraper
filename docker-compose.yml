@@ -1,0 +1,11 @@
+services:
+  book-scraper-api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./BookScraper-Automation:/app/BookScraper-Automation
+      - ./BookScraper-Automation-Betterworld:/app/BookScraper-Automation-Betterworld
+      - ./BookScraper-Automation-eBay:/app/BookScraper-Automation-eBay
+    environment:
+      - PYTHONPATH=/app
